@@ -1,28 +1,20 @@
 # The west manifest file (west.yml) for Sidewalk in nRF Connect SDK (NCS).
 
 manifest:
-  defaults:
-    remote: ncs
 
   remotes:
     # nRF Connect SDK base URL.
-    - name: ncs
-      url-base: https://github.com/nrfconnect
     - name: aws-samples
       url-base: https://github.com/aws-samples
 
   projects:
-    - name: nrf
-      repo-path: sdk-nrf
-      path: nrf
-      revision: 5ec0e3a890d6b45859750316eae0522148cb2571
-      import:
-        name-blocklist:
-          - sidewalk
+    - name: aws-iot-core-for-sidewalk
+      remote: aws-samples
+      repo-path: aws-iot-core-for-amazon-sidewalk-sample-app
+      path: tools/aws-iot-core-for-sidewalk
+      revision: d3f8bded6018901ef99b3d9c5f2c97227f79bb4c
 
   # West-related configuration for the sidewalk repository.
   self:
     # This repository should be cloned to ncs/sidewalk.
     path: sidewalk
-    import: downstream_west.yml
-    submodules: true
